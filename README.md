@@ -1,2 +1,2 @@
 # c_net
-sutdy network programed
+sutdy network program
