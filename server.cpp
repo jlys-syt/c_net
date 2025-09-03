@@ -21,6 +21,8 @@ int main(int argc, char* argv[])
     addr.sin_port = htons(8888);
     addr.sin_addr.s_addr = htonl(INADDR_ANY);
     int sfd = socket(AF_INET, SOCK_STREAM, 0);
+    int opt = 1;
+    setsockopt(sfd, SOL_SOCKET, SO_REUSEADDR, (void *) &opt, sizeof(opt));
     if(sfd == -1)
         sys_err("socket err!");
     if(0 != bind(sfd, (sockaddr*)&addr, sizeof(addr)))

@@ -67,7 +67,7 @@ int main(int argc, char* argv[])
         else if (pid > 0)
         {
             close(nsfd);
-            signal(SIGCHLD, handlerchld);
+            // signal(SIGCHLD, handlerchld);
             struct sigaction act;
             act.sa_handler = handlerchld;
             sigemptyset(&act.sa_mask);
